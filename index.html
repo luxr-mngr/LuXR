@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- ─── Title & Favicon ──────────────────────────────────────── -->
-  <title>LUXR CORE</title>
+  <title>LUXR CORE — XR & VR Immersive Studio | Lima, Peru</title>
   <link rel="icon" type="image/svg+xml" href="public/favicon.svg" />
 
   <!-- ─── SEO: Core Meta ───────────────────────────────────────── -->
   <meta name="description" content="LUXR CORE — An XR & VR studio building immersive experiences in Unreal Engine 5. Cultural heritage digitization, biomedical training simulations, hand tracking, and multi-user deployments. Built in Lima, Peru, deployed globally." />
-  <meta name="keywords" content="XR, VR, extended reality, virtual reality, Unreal Engine 5, immersive experiences, photogrammetry, hand tracking, Meta Quest, Android XR, OpenXR, cultural heritage, Lima Peru, LuXR Studios, LuXR Solutions" />
+  <meta name="keywords" content="XR studio Lima Peru, VR development Peru, extended reality, virtual reality, Unreal Engine 5, immersive experiences, photogrammetry, hand tracking, Meta Quest, Android XR, OpenXR, cultural heritage XR, biomedical VR training, LuXR Studios, LuXR Solutions, LUXR CORE" />
   <meta name="author" content="LUXR CORE" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="theme-color" content="#0a0a14" />
   <link rel="canonical" href="https://luxr-mngr.github.io/LuXR/" />
+
+  <!-- ─── SEO: Geo / Local ──────────────────────────────────────── -->
+  <meta name="geo.region" content="PE-LIM" />
+  <meta name="geo.placename" content="Lima, Peru" />
+  <meta name="geo.position" content="-12.0464;-77.0428" />
+  <meta name="ICBM" content="-12.0464, -77.0428" />
 
   <!-- ─── SEO: Open Graph ──────────────────────────────────────── -->
   <meta property="og:title" content="LUXR CORE — XR & VR Immersive Studio" />
@@ -23,33 +29,106 @@
   <meta property="og:url" content="https://luxr-mngr.github.io/LuXR/" />
   <meta property="og:site_name" content="LUXR CORE" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="es_PE" />
+  <meta property="og:image" content="https://luxr-mngr.github.io/LuXR/public/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="LUXR CORE — XR & VR Immersive Studio built in Unreal Engine 5" />
 
   <!-- ─── SEO: Twitter Card ────────────────────────────────────── -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="LUXR CORE — XR & VR Immersive Studio" />
   <meta name="twitter:description" content="Immersive XR & VR experiences built in Unreal Engine 5. Cultural heritage, biomedical training, hand tracking & multi-user deployments." />
+  <meta name="twitter:image" content="https://luxr-mngr.github.io/LuXR/public/og-image.png" />
+  <meta name="twitter:image:alt" content="LUXR CORE — XR & VR Immersive Studio" />
 
   <!-- ─── SEO: Structured Data (JSON-LD) ───────────────────────── -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "LUXR CORE",
-    "alternateName": ["LuXR Studios", "LuXR Solutions"],
-    "url": "https://luxr-mngr.github.io/LuXR/",
-    "description": "An XR & VR studio crafting immersive experiences in Unreal Engine 5, specializing in cultural heritage digitization, biomedical training, and multi-user deployments.",
-    "foundingLocation": {
-      "@type": "Place",
-      "name": "Lima, Peru"
-    },
-    "knowsAbout": ["Extended Reality", "Virtual Reality", "Unreal Engine 5", "Photogrammetry", "Hand Tracking", "OpenXR", "Meta Quest", "Android XR"],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "luxr.core+contact@gmail.com",
-      "contactType": "sales"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://luxr-mngr.github.io/LuXR/#website",
+        "url": "https://luxr-mngr.github.io/LuXR/",
+        "name": "LUXR CORE",
+        "description": "An XR & VR studio crafting immersive experiences in Unreal Engine 5.",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
+        "@id": "https://luxr-mngr.github.io/LuXR/#organization",
+        "name": "LUXR CORE",
+        "alternateName": ["LuXR Studios", "LuXR Solutions"],
+        "url": "https://luxr-mngr.github.io/LuXR/",
+        "logo": "https://luxr-mngr.github.io/LuXR/public/logo.svg",
+        "image": "https://luxr-mngr.github.io/LuXR/public/og-image.png",
+        "description": "An XR & VR studio crafting immersive experiences in Unreal Engine 5, specializing in cultural heritage digitization, biomedical training, and multi-user deployments.",
+        "email": "luxr.core+contact@gmail.com",
+        "foundingDate": "2023",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lima",
+          "addressCountry": "PE"
+        },
+        "areaServed": [
+          { "@type": "Country", "name": "Peru" },
+          { "@type": "AdministrativeArea", "name": "Global" }
+        ],
+        "knowsAbout": [
+          "Extended Reality (XR)", "Virtual Reality (VR)", "Unreal Engine 5",
+          "Photogrammetry", "Hand Tracking", "OpenXR", "Meta Quest", "Android XR",
+          "Cultural Heritage Digitization", "Biomedical Training Simulations"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "XR & Software Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "XR & VR Experience Development",
+                "description": "Multi-user XR and VR experiences built in Unreal Engine 5, including photogrammetry, hand tracking, and real-time multi-headset control.",
+                "provider": { "@id": "https://luxr-mngr.github.io/LuXR/#organization" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cultural Heritage Digitization",
+                "description": "Photogrammetry-based digitization of archaeological and cultural artifacts for immersive XR experiences.",
+                "provider": { "@id": "https://luxr-mngr.github.io/LuXR/#organization" }
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Software, Web & AI Development",
+                "description": "Websites, mobile apps, AI agents, and IT solutions powering immersive deployments and the businesses behind them.",
+                "provider": { "@id": "https://luxr-mngr.github.io/LuXR/#organization" }
+              }
+            }
+          ]
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "luxr.core+contact@gmail.com",
+          "contactType": "customer support",
+          "availableLanguage": ["English", "Spanish"]
+        }
+      }
+    ]
   }
   </script>
+
+  <!-- ─── Performance: Preload critical resources ──────────────── -->
+  <link rel="preload" href="public/styles.css" as="style" />
+  <link rel="preload" href="public/logo.svg" as="image" type="image/svg+xml" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
 
   <!-- ─── Fonts & Styles ───────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
