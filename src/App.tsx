@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { StatsStrip } from './components/StatsStrip';
@@ -24,6 +25,7 @@ export default function App() {
       <AffiliationsStrip />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   );
 }
