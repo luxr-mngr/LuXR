@@ -163,7 +163,7 @@ export function Portfolio() {
             </h2>
           </div>
           <div className="pf-filter">
-            {['All', 'XR', 'VR', 'App'].map(f => (
+            {['All', 'XR/VR', 'App', 'AI', 'Web'].map(f => (
               <button
                 key={f}
                 className={`pf-filter-btn${filter === f ? ' active' : ''}`}
