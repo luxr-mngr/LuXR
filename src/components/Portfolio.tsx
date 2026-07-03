@@ -31,7 +31,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'oct-xr': [oct1, oct2],
   'horizon-pucp': [horizon1, horizon2],
   'tlr-diagnostic-calculator': [webtrl1, webtrl2, webtrl3, webtrl4, webtrl5],
-  'medical-agent-gws': [wip],
+  //'medical-agent-gws': [wip],
   'bubblerage': [bubbleRage1, bubbleRage2],
 };
 
