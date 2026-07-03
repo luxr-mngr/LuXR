@@ -1008,6 +1008,27 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .client-cell:nth-last-child(-n+3) { border-bottom: none; }
 .client-cell:hover { background: var(--bg-2); }
 
+.client-logo {
+  height: 28px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+}
+.client-logo img {
+  height: 100%;
+  max-width: 120px;
+  object-fit: contain;
+  object-position: left center;
+}
+.client-logo-dark {
+  background: #0a0a12;
+  border-radius: 6px;
+  padding: 6px 10px;
+  height: 28px;
+  box-sizing: content-box;
+  width: fit-content;
+}
+
 .client-nm {
   font-family: var(--ff-display);
   font-size: 24px;
