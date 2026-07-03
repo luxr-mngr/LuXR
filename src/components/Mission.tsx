@@ -4,7 +4,7 @@ const STATS: { fig: string; lbl: string }[] = [
   { fig: '6+', lbl: 'XR experiences shipped' },
   { fig: '15+', lbl: 'Events deployed' },
   { fig: '1,000+', lbl: 'Users in XR' },
-  { fig: '1', lbl: 'Epic-authorized UE5 instructor' },
+  { fig: '100%', lbl: 'On-time delivery rate' },
 ];
 
 export function Mission() {
