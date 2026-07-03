@@ -1009,24 +1009,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .client-cell:hover { background: var(--bg-2); }
 
 .client-logo {
-  height: 28px;
-  margin-bottom: 14px;
+  height: 60px;
+  min-width: 108px;
+  max-width: 100%;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 10px 18px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(10,14,30,0.08);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(10,14,30,0.08);
+  box-sizing: border-box;
 }
 .client-logo img {
   height: 100%;
-  max-width: 120px;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
-  object-position: left center;
 }
 .client-logo-dark {
   background: #0a0a12;
-  border-radius: 6px;
-  padding: 6px 10px;
-  height: 28px;
-  box-sizing: content-box;
-  width: fit-content;
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: none;
 }
 
 .client-nm {
