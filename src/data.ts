@@ -139,6 +139,32 @@ export const PROJECTS: Project[] = [
     tech: ['Unreal Engine 5', 'Multi-scene Architecture', 'Blueprint'],
     outcome: 'Live deployment at multiple PUCP institutional and public events across disciplines.',
   },
+  {
+    id: 'tlr-diagnostic-calculator',
+    client: 'TLR Diagnostic',
+    title: 'TLR Diagnostic Web Calculator',
+    cat: ['Web'],
+    status: 'dev',
+    platform: 'Web',
+    isStatus: true,
+    short: 'A web-based diagnostic calculator built for TLR Diagnostic to streamline clinical result interpretation.',
+    long: 'A web-based diagnostic calculator built for TLR Diagnostic, designed to streamline the interpretation of clinical results and give practitioners a fast, reliable tool for diagnostic decision support.',
+    tech: ['React', 'TypeScript', 'Web App'],
+    outcome: 'In active development.',
+  },
+  {
+    id: 'medical-agent-gws',
+    client: 'GWS',
+    title: 'Medical Agent GWS',
+    cat: ['AI'],
+    status: 'dev',
+    platform: 'Web / AI Agent',
+    isStatus: true,
+    short: 'An AI medical agent for GWS, assisting with clinical workflows through conversational automation.',
+    long: 'An AI medical agent developed for GWS, assisting clinicians with clinical workflows through conversational automation, information retrieval, and task assistance tailored to medical practice.',
+    tech: ['AI Agent', 'LLM Integration', 'Automation'],
+    outcome: 'In active development.',
+  },
 ];
 
 export const CLIENTS: Client[] = [

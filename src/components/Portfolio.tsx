@@ -14,6 +14,7 @@ import oct1 from '../assets/oct1.png';
 import oct2 from '../assets/oct2.png';
 import horizon1 from '../assets/horizon1.png';
 import horizon2 from '../assets/horizon2.png';
+import wip from '../assets/wip-placeholder.png';
 
 const PROJECT_IMAGES: Record<string, string[]> = {
   'sockethub-plugin': [yuyai2],
@@ -22,6 +23,8 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'vestigium': [vesto1, vesto2],
   'oct-xr': [oct1, oct2],
   'horizon-pucp': [horizon1, horizon2],
+  'tlr-diagnostic-calculator': [wip],
+  'medical-agent-gws': [wip],
 };
 
 function CyclingImage({ images, alt }: { images: string[]; alt: string }) {
