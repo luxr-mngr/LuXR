@@ -25,6 +25,21 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'horizon-pucp': [horizon1, horizon2],
 };
 
+function CyclingImage({ images, alt }: { images: string[]; alt: string }) {
+  const [idx, setIdx] = useState(0);
+  const [fade, setFade] = useState(true);
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const id = setInterval(() => {
+      setFade(false);
+      setTimeout(() => { setIdx(i => (i + 1) % images.length); setFade(true); }, 300);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [images.length]);
+  if (!images[0]) return null;
+  return <img src={images[idx]} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: fade ? 1 : 0, transition: 'opacity 0.3s ease' }} />;
+}
+
 function TiltCard({ children, onClick }: { children: ReactNode; onClick: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -181,7 +196,7 @@ export function Portfolio() {
               </div>
               <div className="pf-media">
                 {PROJECT_IMAGES[p.id]?.[0]
-                  ? <img src={PROJECT_IMAGES[p.id][0]} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  ? <CyclingImage images={PROJECT_IMAGES[p.id]} alt={p.title} />
                   : <image-slot id={`pf-${p.id}`} fit="cover" label={`${p.title} drop a shot`} style={{ width: '100%', height: '100%', display: 'block' }} />
                 }
               </div>
