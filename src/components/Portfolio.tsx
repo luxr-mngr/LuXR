@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { ReactNode, MouseEvent as ReactMouseEvent } from 'react';
 import { PROJECTS, type Project } from '../data';
 
+import wip from '../assets/wip-placeholder.png';
 import yuyai1 from '../assets/yuyai1.png';
 import yuyai2 from '../assets/yuyai2.png';
 import museum1 from '../assets/museum1.png';
@@ -14,12 +15,13 @@ import oct1 from '../assets/oct1.png';
 import oct2 from '../assets/oct2.png';
 import horizon1 from '../assets/horizon1.png';
 import horizon2 from '../assets/horizon2.png';
-import wip from '../assets/wip-placeholder.png';
 import webtrl1 from '../assets/webtrl1.png';
 import webtrl2 from '../assets/webtrl2.png';
 import webtrl3 from '../assets/webtrl3.png';
 import webtrl4 from '../assets/webtrl4.png';
 import webtrl5 from '../assets/webtrl5.png';
+import bubbleRage1 from '../assets/bubble-rage-1.png';
+import bubbleRage2 from '../assets/bubble-rage-2.png';
 
 const PROJECT_IMAGES: Record<string, string[]> = {
   'sockethub-plugin': [yuyai2],
@@ -30,7 +32,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'horizon-pucp': [horizon1, horizon2],
   'tlr-diagnostic-calculator': [webtrl1, webtrl2, webtrl3, webtrl4, webtrl5],
   'medical-agent-gws': [wip],
-  'bubblerage': [wip],
+  'bubblerage': [bubbleRage1, bubbleRage2],
 };
 
 function CyclingImage({ images, alt }: { images: string[]; alt: string }) {
