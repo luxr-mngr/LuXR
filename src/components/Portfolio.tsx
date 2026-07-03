@@ -3,28 +3,22 @@ import type { ReactNode, MouseEvent as ReactMouseEvent } from 'react';
 import { PROJECTS, type Project } from '../data';
 
 import yuyai1 from '../assets/yuyai1.png';
-import yuyai2 from '../assets/yuyai2.png';
-import yuyai3 from '../assets/yuyai3.png';
-import yuyai4 from '../assets/yuyai4.png';
 import museum1 from '../assets/museum1.png';
 import museum2 from '../assets/museum2.png';
 import museum3 from '../assets/museum3.png';
 import museum4 from '../assets/museum4.png';
 import oct1 from '../assets/oct1.png';
 import oct2 from '../assets/oct2.png';
-import oct3 from '../assets/oct3.png';
-import oct4 from '../assets/oct4.png';
 import horizon1 from '../assets/horizon1.png';
 import horizon2 from '../assets/horizon2.png';
-//import horizon3 from '../assets/horizon3.png';
 
 const PROJECT_IMAGES: Record<string, string[]> = {
-  'sockethub-plugin': [yuyai1, yuyai2, yuyai3, yuyai4],
-  'sockethub-app': [yuyai1, yuyai2, yuyai3, yuyai4],
+  'sockethub-plugin': [yuyai1],
+  'sockethub-app':    [yuyai1],
   'museo-itinerante': [museum1, museum2, museum3, museum4],
-  'vestigium': [museum1, museum2, museum3],
-  'oct-xr': [oct1, oct2, oct3, oct4],
-  'horizon-pucp': [horizon1, horizon2],
+  'vestigium':        [museum1, museum2, museum3],
+  'oct-xr':           [oct1, oct2],
+  'horizon-pucp':     [horizon1, horizon2],
 };
 
 function TiltCard({ children, onClick }: { children: ReactNode; onClick: () => void }) {
