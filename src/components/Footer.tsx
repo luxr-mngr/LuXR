@@ -75,7 +75,7 @@ export function Footer({ theme }: { theme: Tweaks['theme'] }) {
         <div className="footer-bottom">
           <span>© {year} LuXR Studios   Lima, Peru</span>
           <span>Unreal Engine 5   OpenXR   Android XR</span>
-          <span style={{ fontFamily: 'monospace', fontSize: '10px', opacity: 0.3 }}>v1.1.2</span>
+          <span style={{ fontFamily: 'monospace', fontSize: '10px', opacity: 0.3 }}>v1.1.3</span>
         </div>
       </div>
     </footer>
