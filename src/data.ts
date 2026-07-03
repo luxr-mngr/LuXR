@@ -168,7 +168,7 @@ export const PROJECTS: Project[] = [
 
 export const CLIENTS: Client[] = [
   { nm: 'PUCP', role: 'University & research' },
-  { nm: 'Yuyay', role: 'Immersive heritage' },
+  { nm: 'Yuyay', role: 'Tourism, Cusco' },
   { nm: 'Grupo Avatar', role: 'XR research group' },
   { nm: 'Municipalidad de Magdalena', role: 'Government & culture' },
   { nm: 'Ministerio de Cultura', role: 'Government & culture' },
