@@ -1,6 +1,31 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { ReactNode, MouseEvent as ReactMouseEvent } from 'react';
 import { PROJECTS, type Project } from '../data';
+
+import yuyai1 from '../assets/yuyai1.png';
+import yuyai2 from '../assets/yuyai2.png';
+import yuyai3 from '../assets/yuyai3.png';
+import yuyai4 from '../assets/yuyai4.png';
+import museum1 from '../assets/museum1.png';
+import museum2 from '../assets/museum2.png';
+import museum3 from '../assets/museum3.png';
+import museum4 from '../assets/museum4.png';
+import oct1 from '../assets/oct1.png';
+import oct2 from '../assets/oct2.png';
+import oct3 from '../assets/oct3.png';
+import oct4 from '../assets/oct4.png';
+import horizon1 from '../assets/horizon1.png';
+import horizon2 from '../assets/horizon2.png';
+import horizon3 from '../assets/horizon3.png';
+
+const PROJECT_IMAGES: Record<string, string[]> = {
+  'sockethub-plugin':  [yuyai1, yuyai2, yuyai3, yuyai4],
+  'sockethub-app':     [yuyai1, yuyai2, yuyai3, yuyai4],
+  'museo-itinerante':  [museum1, museum2, museum3, museum4],
+  'vestigium':         [museum1, museum2, museum3],
+  'oct-xr':            [oct1, oct2, oct3, oct4],
+  'horizon-pucp':      [horizon1, horizon2, horizon3],
+};
 
 function TiltCard({ children, onClick }: { children: ReactNode; onClick: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,28 +53,57 @@ function TiltCard({ children, onClick }: { children: ReactNode; onClick: () => v
 }
 
 function Modal({ project, onClose }: { project: Project; onClose: () => void }) {
+  const imgs = PROJECT_IMAGES[project.id] ?? [];
+  const [idx, setIdx] = useState(0);
+
   useEffect(() => {
+    setIdx(0);
     document.body.style.overflow = 'hidden';
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft')  setIdx(i => (i - 1 + imgs.length) % imgs.length);
+      if (e.key === 'ArrowRight') setIdx(i => (i + 1) % imgs.length);
     };
     window.addEventListener('keydown', onKey);
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKey);
     };
-  }, [onClose]);
+  }, [onClose, project]);
+
+  const btnStyle: React.CSSProperties = {
+    position: 'absolute', top: '50%', transform: 'translateY(-50%)',
+    background: 'rgba(0,0,0,0.45)', border: 'none', color: 'white',
+    width: 36, height: 36, borderRadius: '50%', cursor: 'pointer',
+    fontSize: 22, display: 'flex', alignItems: 'center', justifyContent: 'center',
+  };
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-panel" onClick={e => e.stopPropagation()}>
-        <div className="modal-media">
-          <image-slot
-            id={`modal-${project.id}`}
-            fit="cover"
-            label={`${project.title} drop a shot`}
-            style={{ width: '100%', height: '100%', display: 'block' }}
-          />
+        <div className="modal-media" style={{ position: 'relative', overflow: 'hidden' }}>
+          {imgs.length > 0 ? (
+            <>
+              <img src={imgs[idx]} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              {imgs.length > 1 && (
+                <>
+                  <button onClick={e => { e.stopPropagation(); setIdx(i => (i - 1 + imgs.length) % imgs.length); }} style={{ ...btnStyle, left: 12 }}>‹</button>
+                  <button onClick={e => { e.stopPropagation(); setIdx(i => (i + 1) % imgs.length); }} style={{ ...btnStyle, right: 12 }}>›</button>
+                  <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 6 }}>
+                    {imgs.map((_, i) => (
+                      <button key={i} onClick={e => { e.stopPropagation(); setIdx(i); }} style={{
+                        width: i === idx ? 20 : 6, height: 6, borderRadius: 3, padding: 0,
+                        border: 'none', cursor: 'pointer', transition: 'all 0.2s',
+                        background: i === idx ? 'white' : 'rgba(255,255,255,0.35)',
+                      }} />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <image-slot id={`modal-${project.id}`} fit="cover" label={`${project.title} drop a shot`} style={{ width: '100%', height: '100%', display: 'block' }} />
+          )}
         </div>
         <div className="modal-body">
           <div className="modal-client">{project.client}</div>
@@ -128,12 +182,10 @@ export function Portfolio() {
                 </button>
               </div>
               <div className="pf-media">
-                <image-slot
-                  id={`pf-${p.id}`}
-                  fit="cover"
-                  label={`${p.title} drop a shot`}
-                  style={{ width: '100%', height: '100%', display: 'block' }}
-                />
+                {PROJECT_IMAGES[p.id]?.[0]
+                  ? <img src={PROJECT_IMAGES[p.id][0]} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  : <image-slot id={`pf-${p.id}`} fit="cover" label={`${p.title} drop a shot`} style={{ width: '100%', height: '100%', display: 'block' }} />
+                }
               </div>
               <div className="pf-body">
                 <div className="pf-client">{p.client}</div>
