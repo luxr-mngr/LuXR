@@ -10,7 +10,6 @@ import museum3 from '../assets/museum3.png';
 import museum4 from '../assets/museum4.png';
 import vesto1 from '../assets/vesto1.png';
 import vesto2 from '../assets/vesto2.png';
-import vesto3 from '../assets/vesto3.png';
 import oct1 from '../assets/oct1.png';
 import oct2 from '../assets/oct2.png';
 import horizon1 from '../assets/horizon1.png';
@@ -20,7 +19,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'sockethub-plugin': [yuyai2],
   'sockethub-app': [yuyai1],
   'museo-itinerante': [museum1, museum2, museum3, museum4],
-  'vestigium': [vesto1, vesto2, vesto3],
+  'vestigium': [vesto1, vesto2],
   'oct-xr': [oct1, oct2],
   'horizon-pucp': [horizon1, horizon2],
 };
