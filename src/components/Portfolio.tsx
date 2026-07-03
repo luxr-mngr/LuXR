@@ -20,7 +20,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'sockethub-plugin': [yuyai2],
   'sockethub-app': [yuyai1],
   'museo-itinerante': [museum1, museum2, museum3, museum4],
-  'vestigium': [vesto1],
+  'vestigium': [vesto1, vesto2, vesto3],
   'oct-xr': [oct1, oct2],
   'horizon-pucp': [horizon1, horizon2],
 };
