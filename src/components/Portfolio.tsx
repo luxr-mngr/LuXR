@@ -30,6 +30,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'horizon-pucp': [horizon1, horizon2],
   'tlr-diagnostic-calculator': [webtrl1, webtrl2, webtrl3, webtrl4, webtrl5],
   'medical-agent-gws': [wip],
+  'bubblerage': [wip],
 };
 
 function CyclingImage({ images, alt }: { images: string[]; alt: string }) {
@@ -179,7 +180,7 @@ function Modal({ project, onClose }: { project: Project; onClose: () => void }) 
           </dl>
           {project.storeUrl && (
             <a href={project.storeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ marginTop: 24 }}>
-              View on Meta Store
+              {project.storeUrl.includes('meta.com') ? 'View on Meta Store' : 'View Project'}
               <span className="arr">↗</span>
             </a>
           )}

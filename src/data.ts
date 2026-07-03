@@ -164,6 +164,19 @@ export const PROJECTS: Project[] = [
     tech: ['AI Agent', 'LLM Integration', 'Automation'],
     outcome: 'In active development.',
   },
+  {
+    id: 'bubblerage',
+    client: 'Global Game Jam 2025 — Lima Game Jam',
+    title: 'BubbleRage',
+    cat: ['XR/VR'],
+    status: 'deployed',
+    platform: 'VR (Meta Quest 2/3/3s)',
+    short: 'A VR shooter built in 48 hours for Global Game Jam 2025, where one player mutates into a corrupted amalgamation and the other must purify them back to their senses.',
+    long: 'A two-player VR experience made for the "Bubble" theme at Global Game Jam 2025 (Lima Game Jam site). One friend transforms into an angry amalgamation mid-game, warping their room; the other player takes up arms in VR to purify them back to normal. Built with Unreal Engine for Meta Quest headsets in a 48-hour jam sprint.',
+    tech: ['Unreal Engine', 'VR', 'Meta Quest'],
+    outcome: 'Completed and playable build shipped for Global Game Jam 2025.',
+    storeUrl: 'https://globalgamejam.org/games/2025/bubblerage-2',
+  },
 ];
 
 export const CLIENTS: Client[] = [
