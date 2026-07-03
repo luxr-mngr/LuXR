@@ -136,6 +136,12 @@ function Modal({ project, onClose }: { project: Project; onClose: () => void }) 
               <dd>{project.outcome}</dd>
             </div>
           </dl>
+          {project.storeUrl && (
+            <a href={project.storeUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ marginTop: 24 }}>
+              View on Meta Store
+              <span className="arr">↗</span>
+            </a>
+          )}
         </div>
         <button className="modal-close" onClick={onClose}>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.8">
