@@ -4,6 +4,7 @@ import pucpLogo from '../assets/marcas/PUCP.png';
 import yuyayLogo from '../assets/marcas/yuyay.png';
 import grupoAvatarLogo from '../assets/LOGOS/GRUPOAVATOR-LOGO.jpg';
 import magdalenaLogo from '../assets/LOGOS/logo-magdalena-del-mar.png';
+import minCulturaLogo from '../assets/LOGOS/logo-min-cul.png';
 
 // `tile` picks the backdrop each logo needs to stay legible, independent of
 // the site's own light/dark theme: most marks are drawn for a white plate,
@@ -13,6 +14,7 @@ const CLIENT_LOGOS: Record<string, { src: string; tile?: 'light' | 'dark' }> = {
   Yuyay: { src: yuyayLogo, tile: 'dark' },
   'Grupo Avatar': { src: grupoAvatarLogo, tile: 'light' },
   'Municipalidad de Magdalena': { src: magdalenaLogo, tile: 'light' },
+  'Ministerio de Cultura': { src: minCulturaLogo, tile: 'light' },
 };
 
 export function Clients() {

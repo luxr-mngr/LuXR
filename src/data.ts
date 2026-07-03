@@ -170,8 +170,6 @@ export const CLIENTS: Client[] = [
   { nm: 'PUCP', role: 'University & research' },
   { nm: 'Yuyay', role: 'Immersive heritage' },
   { nm: 'Grupo Avatar', role: 'XR research group' },
-  { nm: 'Museo Itinerante', role: 'Traveling exhibition' },
-  { nm: 'Lima', role: 'Museum deployments' },
-  { nm: 'Arequipa', role: 'Festival deployments' },
   { nm: 'Municipalidad de Magdalena', role: 'Government & culture' },
+  { nm: 'Ministerio de Cultura', role: 'Government & culture' },
 ];
