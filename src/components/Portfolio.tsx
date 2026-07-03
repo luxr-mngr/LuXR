@@ -16,15 +16,15 @@ import oct3 from '../assets/oct3.png';
 import oct4 from '../assets/oct4.png';
 import horizon1 from '../assets/horizon1.png';
 import horizon2 from '../assets/horizon2.png';
-import horizon3 from '../assets/horizon3.png';
+//import horizon3 from '../assets/horizon3.png';
 
 const PROJECT_IMAGES: Record<string, string[]> = {
-  'sockethub-plugin':  [yuyai1, yuyai2, yuyai3, yuyai4],
-  'sockethub-app':     [yuyai1, yuyai2, yuyai3, yuyai4],
-  'museo-itinerante':  [museum1, museum2, museum3, museum4],
-  'vestigium':         [museum1, museum2, museum3],
-  'oct-xr':            [oct1, oct2, oct3, oct4],
-  'horizon-pucp':      [horizon1, horizon2, horizon3],
+  'sockethub-plugin': [yuyai1, yuyai2, yuyai3, yuyai4],
+  'sockethub-app': [yuyai1, yuyai2, yuyai3, yuyai4],
+  'museo-itinerante': [museum1, museum2, museum3, museum4],
+  'vestigium': [museum1, museum2, museum3],
+  'oct-xr': [oct1, oct2, oct3, oct4],
+  'horizon-pucp': [horizon1, horizon2],
 };
 
 function TiltCard({ children, onClick }: { children: ReactNode; onClick: () => void }) {
@@ -61,7 +61,7 @@ function Modal({ project, onClose }: { project: Project; onClose: () => void }) 
     document.body.style.overflow = 'hidden';
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft')  setIdx(i => (i - 1 + imgs.length) % imgs.length);
+      if (e.key === 'ArrowLeft') setIdx(i => (i - 1 + imgs.length) % imgs.length);
       if (e.key === 'ArrowRight') setIdx(i => (i + 1) % imgs.length);
     };
     window.addEventListener('keydown', onKey);
