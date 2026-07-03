@@ -1292,3 +1292,10 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   width: 100%;
   accent-color: var(--accent);
 }
+
+/* ─── Custom scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+* { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
