@@ -19,6 +19,7 @@ export interface Project {
   tech: string[];
   outcome: string;
   isStatus?: boolean;
+  storeUrl?: string;
 }
 
 export interface Client {
@@ -99,6 +100,7 @@ export const PROJECTS: Project[] = [
     long: 'A traveling XR experience showcasing 10 photogrammetry-digitized Mochica cultural artifacts, deployed across museums in Lima and festivals in Arequipa. LuXR led the transition from VR to XR, integrated full hand tracking for all artifact interactions, and expanded the collection with audio descriptions and contextual multimedia for each piece.',
     tech: ['Unreal Engine 5', 'Photogrammetry', 'Hand Tracking', 'OpenXR'],
     outcome: 'Live multi-city deployment across cultural venues in Lima and Arequipa, Peru.',
+    storeUrl: 'https://www.meta.com/es-es/experiences/museo-itinerante-xr-peru/25735959299325439/',
   },
   {
     id: 'vestigium',
