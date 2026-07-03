@@ -26,17 +26,51 @@ const PROJECT_IMAGES: Record<string, string[]> = {
 
 function CyclingImage({ images, alt }: { images: string[]; alt: string }) {
   const [idx, setIdx] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [incomingIdx, setIncomingIdx] = useState<number | null>(null);
+  const [incomingOpacity, setIncomingOpacity] = useState(0);
+  const idxRef = useRef(0);
+  idxRef.current = idx;
+
   useEffect(() => {
     if (images.length <= 1) return;
     const id = setInterval(() => {
-      setFade(false);
-      setTimeout(() => { setIdx(i => (i + 1) % images.length); setFade(true); }, 300);
+      const next = (idxRef.current + 1) % images.length;
+      setIncomingIdx(next);
+      setIncomingOpacity(0);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setIncomingOpacity(1));
+      });
+      setTimeout(() => {
+        setIdx(next);
+        setIncomingIdx(null);
+        setIncomingOpacity(0);
+      }, 900);
     }, 5000);
     return () => clearInterval(id);
   }, [images.length]);
+
   if (!images[0]) return null;
-  return <img src={images[idx]} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: fade ? 1 : 0, transition: 'opacity 0.3s ease' }} />;
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+      <img src={images[idx]} alt={alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      {incomingIdx !== null && (
+        <img
+          src={images[incomingIdx]}
+          alt=""
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+            opacity: incomingOpacity,
+            transition: 'opacity 0.9s ease-in-out',
+          }}
+        />
+      )}
+    </div>
+  );
 }
 
 function TiltCard({ children, onClick }: { children: ReactNode; onClick: () => void }) {
