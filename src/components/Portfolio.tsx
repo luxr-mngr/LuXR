@@ -20,7 +20,7 @@ const PROJECT_IMAGES: Record<string, string[]> = {
   'sockethub-plugin': [yuyai2],
   'sockethub-app': [yuyai1],
   'museo-itinerante': [museum1, museum2, museum3, museum4],
-  'vestigium': [vesto1, vesto2, vesto3],
+  'vestigium': [vesto1],
   'oct-xr': [oct1, oct2],
   'horizon-pucp': [horizon1, horizon2],
 };
@@ -33,7 +33,7 @@ function CyclingImage({ images, alt }: { images: string[]; alt: string }) {
     const id = setInterval(() => {
       setFade(false);
       setTimeout(() => { setIdx(i => (i + 1) % images.length); setFade(true); }, 300);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(id);
   }, [images.length]);
   if (!images[0]) return null;
