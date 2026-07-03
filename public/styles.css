@@ -51,7 +51,7 @@
 
 /* ─── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 body {
@@ -1057,6 +1057,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .client-cell:nth-child(2n) { border-right: none; }
 }
 
+@media (max-width: 400px) {
+  .client-grid { grid-template-columns: 1fr; }
+  .client-cell:nth-child(2n) { border-right: 1px solid var(--line); }
+  .client-cell:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .client-cell:last-child { border-bottom: none; }
+}
+
 /* ─── Contact ───────────────────────────────────────────────── */
 .contact-glow {
   position: absolute;
@@ -1252,6 +1259,7 @@ textarea.form-input { resize: vertical; min-height: 120px; }
   bottom: 80px; right: 24px;
   z-index: 300;
   width: 280px;
+  max-width: calc(100vw - 48px);
   background: var(--bg-2);
   border: 1px solid var(--line-2);
   border-radius: 16px;
