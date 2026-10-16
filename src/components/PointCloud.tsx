@@ -47,7 +47,7 @@ export function PointCloud() {
         c.setAttribute('cy', String(215 + y2 * 168));
         c.setAttribute('r', String(0.5 + depth * 2.1));
         c.setAttribute('opacity', String(0.1 + depth * 0.72));
-        c.setAttribute('fill', depth > 0.62 ? 'var(--accent-2)' : 'var(--accent)');
+        c.setAttribute('fill', depth > 0.62 ? 'var(--gold)' : 'var(--accent)');
       }
     };
 
