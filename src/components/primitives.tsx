@@ -1,7 +1,7 @@
 export function Spark({ size = 24, className = '' }: { size?: number; className?: string }) {
   return (
     <span className={`spark${className ? ' ' + className : ''}`}>
-      <svg width={size} height={size} viewBox="0 0 24 24" fill="var(--accent)">
+      <svg width={size} height={size} viewBox="0 0 24 24" fill="var(--gold)">
         <path d="M12 0 C12.6 6.4 17.6 11.4 24 12 C17.6 12.6 12.6 17.6 12 24 C11.4 17.6 6.4 12.6 0 12 C6.4 11.4 11.4 6.4 12 0 Z" />
       </svg>
     </span>
@@ -17,12 +17,13 @@ export function Arrow() {
 }
 
 export function Logo({ height = 26, variant = 'white' }: { height?: number; variant?: 'white' | 'blue' }) {
-  const filter = variant === 'white' ? 'brightness(0) invert(1)' : 'none';
+  // Identidad v3: 'white' = letras blancas y destello dorado (fondo oscuro); 'blue' = versión con dorado para fondo claro.
+  const src = variant === 'white' ? '/logo-oscuro.svg' : '/logo-color.svg';
   return (
     <img
-      src="/logo.svg"
+      src={src}
       alt="LuXR"
-      style={{ height: height + 'px', width: 'auto', filter, display: 'block' }}
+      style={{ height: height + 'px', width: 'auto', display: 'block' }}
     />
   );
 }
