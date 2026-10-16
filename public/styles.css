@@ -1,53 +1,50 @@
-/* ─── Tokens ─────────────────────────────────────────────────── */
+/* ─── Tokens (identidad LuXR v3, 2026-10-16) ─────────────────── */
+/* Azul Lu #1940D1 · Azul XR #1C2E5B · Dorado Inti #F2B13A / #C38A12 · Grafito #0B1020 · Hielo #F2F4FA · Niebla #8A93AD */
 :root {
-  --bg:         #06070B;
-  --bg-2:       #0A0C12;
-  --bg-3:       #10131D;
-  --surface:    rgba(255,255,255,0.025);
+  --bg:         #0B1020;
+  --bg-2:       #0F1529;
+  --bg-3:       #151C34;
+  --surface:    rgba(255,255,255,0.03);
   --line:       rgba(255,255,255,0.09);
   --line-2:     rgba(255,255,255,0.16);
-  --text:       #EEF1FB;
-  --muted:      #9398AE;
-  --faint:      #5A5F76;
+  --text:       #F2F4FA;
+  --muted:      #8A93AD;
+  --faint:      #5A6380;
 
-  --accent:       #2E55F2;
-  --accent-2:     #5B79FF;
-  --accent-deep:  #1940D1;
-  --accent-glow:  rgba(46,85,242,0.45);
-  --grad:         linear-gradient(120deg, #2E55F2, #5B79FF);
+  --accent:       #1940D1;
+  --accent-2:     #F2B13A;
+  --accent-deep:  #1C2E5B;
+  --accent-hover: #2A50E0;
+  --accent-glow:  rgba(25,64,209,0.45);
+  --gold:         #F2B13A;
+  --grad:         linear-gradient(120deg, #1940D1, #F2B13A);
 
   --maxw: 1320px;
   --pad:  clamp(20px, 5vw, 76px);
 
-  --ff-display: "Bodoni Moda", "Times New Roman", serif;
-  --ff-sans:    "Manrope", system-ui, sans-serif;
-  --ff-mono:    "JetBrains Mono", ui-monospace, monospace;
+  --ff-display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --ff-sans:    "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --ff-mono:    "Fragment Mono", ui-monospace, monospace;
 
   --li: 0.9;
 }
 
 [data-theme="day"] {
-  --bg:         #EEF0F7;
+  --bg:         #F2F4FA;
   --bg-2:       #FFFFFF;
-  --bg-3:       #F5F6FB;
-  --surface:    rgba(10,16,40,0.025);
-  --line:       rgba(10,16,40,0.10);
-  --line-2:     rgba(10,16,40,0.18);
-  --text:       #0A0C14;
-  --muted:      #4E5468;
-  --faint:      #9298AD;
-  --accent-glow: rgba(46,85,242,0.22);
+  --bg-3:       #E9ECF5;
+  --surface:    rgba(11,16,32,0.025);
+  --line:       rgba(11,16,32,0.10);
+  --line-2:     rgba(11,16,32,0.18);
+  --text:       #0B1020;
+  --muted:      #4F5873;
+  --faint:      #8A93AD;
+  --accent-2:   #1940D1;
+  --accent-hover: #1C2E5B;
+  --accent-glow: rgba(25,64,209,0.22);
+  --gold:       #C38A12;
+  --grad:       linear-gradient(120deg, #1940D1, #C38A12);
 }
-
-/* Accent variants */
-[data-accent="Iridescent"] { --accent:#2E55F2; --accent-2:#9B4DCA; --accent-deep:#1940D1; --accent-glow:rgba(155,77,202,0.35); --grad:linear-gradient(120deg,#2E55F2,#9B4DCA,#E040C8); }
-[data-accent="Violet"]     { --accent:#6A4DF5; --accent-2:#9B83FF; --accent-deep:#4A2FD5; --accent-glow:rgba(106,77,245,0.40); --grad:linear-gradient(120deg,#6A4DF5,#9B83FF); }
-[data-accent="Cyan"]       { --accent:#11A0E6; --accent-2:#4FC8FF; --accent-deep:#0980C6; --accent-glow:rgba(17,160,230,0.40); --grad:linear-gradient(120deg,#11A0E6,#4FC8FF); }
-
-/* Display font variants */
-[data-font="Cormorant"]    { --ff-display:"Cormorant Garamond","Times New Roman",serif; }
-[data-font="Playfair"]     { --ff-display:"Playfair Display","Times New Roman",serif; }
-[data-font="Bodoni"]       { --ff-display:"Bodoni Moda","Times New Roman",serif; }
 
 /* ─── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,9 +65,9 @@ body {
 
 h1, h2, h3 {
   font-family: var(--ff-display);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.04;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 .display { line-height: 1.0; letter-spacing: -0.015em; text-wrap: balance; }
@@ -120,7 +117,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 0 0 0 var(--accent-glow);
 }
 .btn-primary:hover {
-  background: var(--accent-2);
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 30px var(--accent-glow);
 }
@@ -334,9 +331,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .hero-h1 {
   font-family: var(--ff-display);
   font-size: clamp(52px, 10.5vw, 158px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.0;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.03em;
   text-wrap: balance;
   margin-bottom: 36px;
   position: relative;
