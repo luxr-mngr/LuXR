@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luxr-mngr.github.io/LuXR/sitemap.xml
+Sitemap: https://luxrcore.com/sitemap.xml
